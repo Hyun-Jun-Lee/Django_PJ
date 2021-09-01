@@ -6,11 +6,13 @@
 <body>
     <!-- include로 자주 쓰는 header <div> 부분 따로 관리 -->
     {% include 'header.html' %}
-
+    <hr>
     <!-- 내용 부분만 extend로 수정해서 쓰고 나머지는 모두 include로 재사용 -->
     {% block content %}
-    {% endblock %}
 
+
+    {% endblock %}
+    <hr>
     <!-- include로 자주 쓰는 bottom <div> 부분 따로 관리 -->
     {% include 'bottom.html' %}
 

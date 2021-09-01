@@ -1,0 +1,22 @@
+
+.bottom {
+    margin:2rem; text-align:center;
+}
+
+.bottom_logo {
+    margin-top:1rem; font-family:
+    'Source Code Pro', monospace;
+}
+
+.bottom_menu {
+    font-size:.7rem;
+}
+
+.top {
+    margin:2rem;
+    text-align:center;
+}
+
+.top_logo {
+    font-family: 'Source Code Pro', monospace;
+}

@@ -17,7 +17,7 @@ env = environ.Env(
     DEBUG=(bool, True)
 )
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# 경로지정
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # reading .env file
@@ -130,7 +130,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+# STATIC_URL과 {% static 'base.css' %} 합쳐져서 url에 넘겨짐
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# static 경로를 따로 추가 해주기
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
