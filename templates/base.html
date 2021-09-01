@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="kor">
+
+<!-- include로 <head> 부분 따로 관리 -->
+{% include 'head.html' %}
 <body>
-    <p1>Hello!</p1>
+    <!-- include로 자주 쓰는 header <div> 부분 따로 관리 -->
+    {% include 'header.html' %}
+
+    <!-- 내용 부분만 extend로 수정해서 쓰고 나머지는 모두 include로 재사용 -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- include로 자주 쓰는 bottom <div> 부분 따로 관리 -->
+    {% include 'bottom.html' %}
+
+
 </body>
 </html>
