@@ -2,10 +2,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div style="height: 20rem; background-color: #38df81; border-radius:1rem; margin:2rem;">
-        <h1>
-            Test
+    <div style="border-radius:1rem; margin:2rem;">
+        <h1 style="font-family:'Source Code Pro', monospace;">
+            Hello world list
         </h1>
+
+        <form action="/account/hello_world/" method="post">
+            <!--POST가 작동하려면 장고에서 지원하는 보안기능 넣어줘야함  -->
+            {% csrf_token %}
+            <div>
+                <!--"hello_world_input"에 데이터 입력받기  -->
+                <input type="text" name="hello_world_input">
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" value="POST">
+            </div>
+        </form>
+        <!--if문, hello_world_output이 존재한다면 h1 태그를 생성해라  -->
+        {% if hello_world_output %}
+        <h1>
+            {{ hello_world_output.text  }}
+        </h1>
+        {% endif %}
     </div>
 
 {% endblock %}
