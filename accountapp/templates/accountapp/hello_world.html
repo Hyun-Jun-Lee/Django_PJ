@@ -18,11 +18,13 @@
                 <input type="submit" class="btn btn-primary" value="POST">
             </div>
         </form>
-        <!--if문, hello_world_output이 존재한다면 h1 태그를 생성해라  -->
-        {% if hello_world_output %}
-        <h1>
-            {{ hello_world_output.text  }}
-        </h1>
+        <!--if문, ~이 존재한다면 h1 태그를 생성해라  -->
+        {% if hello_world_list %}
+            {% for hello_world in hello_world_list %}
+            <h3>
+                {{ hello_world.text  }}
+            </h3>
+        {% endfor %}
         {% endif %}
     </div>
 
