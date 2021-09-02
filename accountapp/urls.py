@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
-from accountapp.views import hello_world, AccountCreateView
+from accountapp.views import hello_world, AccountCreateView, AccountDetailView
 
 app_name = "accountapp"
 urlpatterns = [
@@ -10,5 +10,7 @@ urlpatterns = [
     path('create/', AccountCreateView.as_view(), name='create'),
     # login view는 템플릿 지정해줘야함
     path('login/', LoginView.as_view(template_name='accountapp/login.html'), name='login'),
-    path('logout/', LogoutView.as_view(), name='logout')
+    path('logout/', LogoutView.as_view(), name='logout'),
+    # detail 정보는 고유키(pk)필요
+    path('detail/<int:pk>', AccountDetailView.as_view(), name='detail'),
 ]
