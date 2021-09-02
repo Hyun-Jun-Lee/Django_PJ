@@ -1,10 +1,13 @@
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from django.views.generic import CreateView
 
 from accountapp.models import HelloWorld
 
-
+#함수형 뷰
 def hello_world(request):
 
     if request.method == "POST":
@@ -23,4 +26,12 @@ def hello_world(request):
     else:
         hello_world_list = HelloWorld.objects.all()
         return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
+
+# class형 view
+class AccountCreateView(CreateView):
+    model = User
+    form_class = UserCreationForm
+    # reverse : 함수, reverse_lazy : 클래스
+    success_url = reverse_lazy('accountapp:hello_world')
+    template_name = 'accountapp/create.html'
 
