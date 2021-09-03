@@ -9,6 +9,19 @@
       <h2>
         ID : {{ target_user.username }}
       </h2>
+      <!--target_user가 지금 접속한 유저와 같다면 보여줌-->
+      {% if target_user == user %}
+      <a href="{% url 'accountapp:update' pk=user.pk %}">
+        <p>
+          Change Information
+        </p>
+      </a>
+      <a href="{% url 'accountapp:delete' pk=user.pk %}">
+        <p>
+          Delete Account
+        </p>
+      </a>
+      {% endif %}
     </div>
   </div>
 
