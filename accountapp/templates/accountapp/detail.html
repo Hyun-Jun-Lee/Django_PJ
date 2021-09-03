@@ -6,9 +6,19 @@
       <p>
         가입날짜 : {{ target_user.date_joined }}
       </p>
+
+      {% if target_user.profile %}
       <h2>
-        ID : {{ target_user.username }}
+        ID : {{ target_user.profile.nickname }}
       </h2>
+      {% else %}
+      <a href="{% url 'profileapp:create' %}">
+        <h2>
+          Create Profile
+        </h2>
+      </a>
+      {% endif %}
+
       <!--target_user가 지금 접속한 유저와 같다면 보여줌-->
       {% if target_user == user %}
       <a href="{% url 'accountapp:update' pk=user.pk %}">

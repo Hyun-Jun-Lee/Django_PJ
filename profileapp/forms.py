@@ -9,4 +9,4 @@ class ProfileCreationForm(ModelForm):
     class Meta:
         model = Profile
         # 사용할 fields 설정
-        fields = ['image','nickname','message']
+        fields = ['image', 'nickname', 'message']
