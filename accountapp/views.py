@@ -1,14 +1,21 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 
+from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
 from accountapp.models import HelloWorld
 
-#함수형 뷰
+# 데코레이터를 배열로 만들어서 코드 줄이기 가능
+has_ownership = [account_ownership_required, login_required]
+
+# 로그인 했는지 확인해주는 데코레이터
+@login_required
 def hello_world(request):
 
     if request.method == "POST":
@@ -28,7 +35,14 @@ def hello_world(request):
         hello_world_list = HelloWorld.objects.all()
         return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
 
+
+
 # class형 view
+
+# method_decorator : 데코레이터를 메서드에 사용할수잇도록 변환해주는 데코레이터
+# method_decorator 활용해서 login_required를 get,post에 적용
+@method_decorator(login_required, 'get')
+@method_decorator(login_required, 'post')
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
@@ -36,11 +50,14 @@ class AccountCreateView(CreateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/create.html'
 
+
 class AccountDetailView(DetailView):
     model = User
     template_name = 'accountapp/detail.html'
     context_object_name = 'target_user'
 
+@method_decorator(has_ownership, 'get')
+@method_decorator(has_ownership, 'post')
 class AccountUpdateView(UpdateView):
     model = User
     context_object_name = 'target_user'
@@ -49,6 +66,8 @@ class AccountUpdateView(UpdateView):
     success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'accountapp/update.html'
 
+@method_decorator(has_ownership, 'get')
+@method_decorator(has_ownership, 'post')
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
