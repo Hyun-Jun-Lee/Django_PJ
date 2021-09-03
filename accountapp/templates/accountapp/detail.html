@@ -8,15 +8,36 @@
       </p>
 
       {% if target_user.profile %}
+      <!-- 이미지 넣기-->
+      <img src="{{ target_user.profile.image.url }}" alt=""
+           style="height:12rem; width: 12rem; border-radius: 5rem; margin-bottom: 2rem;">
+
       <h2>
-        ID : {{ target_user.profile.nickname }}
+        Nickname : {{ target_user.profile.nickname }}
+        {% if target_user == user %}
+        <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+          Edit
+        </a>
+        {% endif %}
       </h2>
+
+      <!--간단한 소개글-->
+      <h5>
+        {{ target_user.profile.message }}
+      </h5>
+
       {% else %}
-      <a href="{% url 'profileapp:create' %}">
-        <h2>
-          Create Profile
-        </h2>
-      </a>
+        {% if target_user == user %}
+        <a href="{% url 'profileapp:create' %}">
+          <h2>
+            Create Profile
+          </h2>
+        </a>
+        {% else %}
+      <h2>
+        닉네임을 설정해주세요!
+      </h2>
+        {% endif %}
       {% endif %}
 
       <!--target_user가 지금 접속한 유저와 같다면 보여줌-->
