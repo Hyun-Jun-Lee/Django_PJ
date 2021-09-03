@@ -41,8 +41,7 @@ def hello_world(request):
 
 # method_decorator : 데코레이터를 메서드에 사용할수잇도록 변환해주는 데코레이터
 # method_decorator 활용해서 login_required를 get,post에 적용
-@method_decorator(login_required, 'get')
-@method_decorator(login_required, 'post')
+
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
