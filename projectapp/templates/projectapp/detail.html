@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+    <div style="text-align:center; max-width: 700px; margin: 4rem auto;">
+      <img src="{{ target_project.image.url }}" alt=""
+        style="height:12rem; width: 12rem; border-radius: 5rem; margin-bottom: 2rem; object-fit:cover;">
+      <h2>
+        {{ target_project.title }}
+      </h2>
+      <h4>
+        {{ target_project.writer.profile.nickname }}
+      </h4>
+      <h4 style="margin-bottom: 3rem;">
+        {{ target_project.description }}
+      </h4>
+      {% if target_project.writer == user %}
+      <a href="{% url 'projectapp:delete' pk=target_project.pk %}"
+      class="btn btn-danger rounded-pill col-3">
+        Delete
+      </a>
+      {% endif %}
+
+    </div>
+  </div>
+
+{% endblock %}
