@@ -3,11 +3,11 @@
     <div>
         <h1 class="top_logo">HJ'Blog</h1>
     </div>
-    <div>
-        <a href="{% url 'articleapp:list' %}" >
+    <div class="header_navbar">
+        <a href="{% url 'articleapp:list' %}"class="header_nav" >
         <span>Article</span>
         </a>
-        <a href="{% url 'projectapp:list' %}">
+        <a href="{% url 'projectapp:list' %}"class="header_nav">
         <span>Project</span>
         </a>
         <span>nav3</span>
@@ -15,18 +15,18 @@
         {% if not user.is_authenticated %}
         <!--login view 패턴 : next -> (LOGIN_/REDIRECT_/URL) or (default)-->
         <!--(LOGIN_/REDIRECT_/URL)는 setting.py에서 정의-->
-        <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+        <a href="{% url 'accountapp:login' %}?next={{ request.path }}"class="header_nav">
         <span>login</span>
         </a>
-        <a href="{% url 'accountapp:create' %}">
+        <a href="{% url 'accountapp:create' %}"class="header_nav">
         <span>SignUp</span>
         </a>
         {% else %}
         <!-- pk는 현재 로그인된 유저의 pk  -->
-        <a href="{% url 'accountapp:detail' pk=user.pk %}">
+        <a href="{% url 'accountapp:detail' pk=user.pk %}" class="header_nav">
             <span>MyPage</span>
         </a>
-        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="header_nav">
             <span>logout</span>
         </a>
         {% endif %}

@@ -37,3 +37,11 @@ a:hover {
     color: black;
     text-decoration : none;
 }
+
+.header_nav {
+    margin: 0 2rem;
+}
+
+.header_navbar {
+    margin:1rem 0 ;
+}
