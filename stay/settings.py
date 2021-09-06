@@ -38,7 +38,8 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#  모바일도 가능하도록 허용 (* : 모든 호스트에게 허용)
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
