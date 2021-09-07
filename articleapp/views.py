@@ -59,4 +59,4 @@ class ArticleListView(ListView):
     context_object_name = 'article_list'
     template_name = 'articleapp/list.html'
     # 한 페이지에 게시물 몇개?
-    paginate_by = 5
+    paginate_by = 8

@@ -35,7 +35,7 @@ class SubscriptionListView(ListView):
     model = Article
     template_name = 'subscribeapp/list.html'
     context_object_name = 'article_list'
-    paginate_by = 10
+    paginate_by = 8
 
     def get_queryset(self):
         # Subscription 모델에서 user의 project값을 list로 받기
