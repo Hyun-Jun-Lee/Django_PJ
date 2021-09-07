@@ -10,7 +10,6 @@ from django.views.generic.list import MultipleObjectMixin
 
 from accountapp.decorators import account_ownership_required
 from accountapp.forms import AccountUpdateForm
-from accountapp.models import HelloWorld
 
 # 데코레이터를 배열로 만들어서 코드 줄이기 가능
 from articleapp.models import Article
@@ -18,25 +17,6 @@ from articleapp.models import Article
 has_ownership = [account_ownership_required, login_required]
 
 # 로그인 했는지 확인해주는 데코레이터
-@login_required
-def hello_world(request):
-
-    if request.method == "POST":
-        # POST에서 'hello_world_input' 라는 데이터를 가져오기
-        temp = request.POST.get('hello_world_input')
-
-        # models.py에서 model 가져오기
-        new_hello_world = HelloWorld()
-        # input 받은 데이터를 HelloWorld 모델의 text 라는 속성에 저장
-        new_hello_world.text = temp
-        # 저장
-        new_hello_world.save()
-
-        hello_world_list = HelloWorld.objects.all()
-        return HttpResponseRedirect(reverse('accountapp:hello_world'))
-    else:
-        hello_world_list = HelloWorld.objects.all()
-        return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
 
 
 

@@ -15,8 +15,10 @@
       <h2>
         Nickname : {{ target_user.profile.nickname }}
         {% if target_user == user %}
-        <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-          Edit
+        <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}"
+          class="material-icons"
+          style="box-shadow:0 0 3px ; ">
+          edit
         </a>
         {% endif %}
       </h2>
@@ -42,14 +44,14 @@
 
       <!--target_user가 지금 접속한 유저와 같다면 보여줌-->
       {% if target_user == user %}
-      <a href="{% url 'accountapp:update' pk=user.pk %}">
+      <a href="{% url 'accountapp:update' pk=user.pk %}"  class="material-icons">
         <p>
-          Change Information
+          update
         </p>
       </a>
-      <a href="{% url 'accountapp:delete' pk=user.pk %}">
+      <a href="{% url 'accountapp:delete' pk=user.pk %}" class="material-icons">
         <p>
-          Delete Account
+          delete
         </p>
       </a>
       {% endif %}

@@ -9,3 +9,7 @@ class Project(models.Model):
     title = models.CharField(max_length=15, null=False)
     description = models.CharField(max_length=300, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    # article 만들 때 프로젝트 이름 제대로 뜨게하기
+    def __str__(self):
+        return f'{self.pk} : {self.title}'
