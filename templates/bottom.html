@@ -2,23 +2,23 @@
 
     <div class="bottom_menu">
         <a href="{% url 'articleapp:list' %}"class="header_nav" >
-        <span>Article</span>
+            <span>Article</span>
         </a>
         <a href="{% url 'projectapp:list' %}"class="header_nav">
-        <span>Project</span>
+            <span>Project</span>
         </a>
         <a href="{% url 'subscribeapp:list' %}"class="header_nav">
-        <span>Subscription</span>
+            <span>Subscription</span>
         </a>
         <!-- is_authenticated : 로그인 되었는지 확인 -->
         {% if not user.is_authenticated %}
         <!--login view 패턴 : next -> (LOGIN_/REDIRECT_/URL) or (default)-->
         <!--(LOGIN_/REDIRECT_/URL)는 setting.py에서 정의-->
         <a href="{% url 'accountapp:login' %}?next={{ request.path }}"class="header_nav">
-        <span>login</span>
+            <span>login</span>
         </a>
         <a href="{% url 'accountapp:create' %}"class="header_nav">
-        <span>SignUp</span>
+            <span>SignUp</span>
         </a>
         {% else %}
         <!-- pk는 현재 로그인된 유저의 pk  -->
