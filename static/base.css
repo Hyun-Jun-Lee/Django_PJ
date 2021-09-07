@@ -1,15 +1,17 @@
 
 .bottom {
     margin:2rem; text-align:center;
+    font-family: 'NanumSquareRoundOTFB';
 }
 
 .bottom_logo {
     margin-top:1rem; font-family:
-    'Source Code Pro', monospace;
+    font-family: 'NanumSquareRoundOTFB';
 }
 
 .bottom_menu {
     font-size:1rem;
+    font-family: 'NanumSquareRoundOTFB';
 }
 
 .top {
@@ -18,7 +20,7 @@
 }
 
 .top_logo {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'NanumSquareRoundOTFB';
 }
 
 

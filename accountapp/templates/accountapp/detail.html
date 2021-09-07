@@ -13,7 +13,7 @@
            style="height:12rem; width: 12rem; border-radius: 5rem; margin-bottom: 2rem; object-fit:cover;">
 
       <h2>
-        Nickname : {{ target_user.profile.nickname }}
+        {{ target_user.profile.nickname }}
         {% if target_user == user %}
         <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}"
           class="material-icons"
