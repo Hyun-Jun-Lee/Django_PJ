@@ -142,7 +142,7 @@ USE_TZ = True
 
 # STATIC_URL과 {% static 'base.css' %} 합쳐져서 url에 넘겨짐
 STATIC_URL = '/static/'
-
+# collectstatic 하면 이 경로로 모든 static파일 저장
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # static 경로를 따로 추가 해주기
