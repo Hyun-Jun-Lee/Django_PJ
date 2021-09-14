@@ -10,7 +10,7 @@
 
 ***
 
-## 1. 개발 목적
+## 개발 목적
 
 
 - 간단한 Blog 개발을 통해 Django 학습
@@ -19,13 +19,13 @@
 
 ***
 
-## 2. 개발 목표
+## 개발 목표
 
 - Pinterest 모티브로한 Blog 개발
 - Docker, AWS를 활용해 배포
 - 지속적인 개선을 통한 Upgrade
 
-## 3. 사용 기술
+## 사용 기술
 
 - OS : Window
 - IDE : Pycharm Community
@@ -34,6 +34,6 @@
 - Web Server : Nginx
 - WSGI : Gunicorn
 
-## 4. 기능
+## 기능
 
 - Login, Logout, SignUp
