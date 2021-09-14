@@ -26,3 +26,14 @@
 - 지속적인 개선을 통한 Upgrade
 
 ## 3. 사용 기술
+
+- OS : Window
+- IDE : Pycharm Community
+- 언어 : Python, HTML/CSS, Javascript
+- Framework : Django
+- Web Server : Nginx
+- WSGI : Gunicorn
+
+## 4. 기능
+
+- Login, Logout, SignUp
