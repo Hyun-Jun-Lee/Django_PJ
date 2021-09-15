@@ -12,7 +12,7 @@
 
 ***
 
-## 1.개발 목적
+## 개발 목적
 
 
 - 간단한 Blog 개발을 통해 Django CURD 학습
@@ -21,15 +21,19 @@
 
 ***
 
-## 2. 개발 목표
+## 개발 목표
 
 - Pinterest 모티브로한 Blog 개발
 - Docker, AWS를 활용해 배포
 - 지속적인 개선을 통한 Upgrade
 
+<<<<<<< HEAD
 ***
 
 ## 3. 사용 기술
+=======
+## 사용 기술
+>>>>>>> ce4feed7624dade501e4f3f46e06c32bccc3454b
 
 - OS : Window
 - IDE : Pycharm Community
@@ -38,6 +42,7 @@
 - Web Server : Nginx
 - WSGI : Gunicorn
 
+<<<<<<< HEAD
 ***
 
 ## 4. 개발한 기능
@@ -95,3 +100,8 @@
 - [ ] 디자인 개선 (카드가 더 촘촘하게)
 - [ ] 좋아요 기능 추가(인스타그램 처럼)
 - [ ] 개선 후 AWS 활용해 배포
+=======
+## 기능
+
+- Login, Logout, SignUp
+>>>>>>> ce4feed7624dade501e4f3f46e06c32bccc3454b
