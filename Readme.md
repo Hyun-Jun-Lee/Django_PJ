@@ -1,5 +1,8 @@
 # Pinterest 모티브로한 Blog 개발
 > Version 1.0 : http://141.164.39.223/
+- Test Account ( ID : test12 / PS : testtest1234)
+
+***
 
 ## 목차
 
@@ -15,7 +18,7 @@
 ## 개발 목적
 
 
-- 간단한 Blog 개발을 통해 Django CURD 학습
+- Blog 개발을 통해 Django CURD 학습
 - 개발부터 배포까지 해보며 웹 프로그래밍의 전반적인 흐름 학습
 <br>
 
