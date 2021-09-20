@@ -1,5 +1,5 @@
 # Pinterest 모티브로한 Blog 개발
-> Version 1.0 : http://141.164.39.223/
+> Version 2.0 : http://141.164.39.223/
 - Test Account ( ID : test12 / PS : testtest1234)
 
 ***
@@ -85,6 +85,9 @@
 
 - like
   - ♥ 클릭시 좋아요 +1
+![image](https://user-images.githubusercontent.com/76996686/134018600-742dc36b-8548-4c61-b307-0ad6f982e919.png)
+![image](https://user-images.githubusercontent.com/76996686/134018689-63818491-f21f-4d47-b21d-1ed5905a06a1.png)
+
 
 ***
 
