@@ -9,6 +9,16 @@
       <h4>
         {{ target_article.writer.profile.nickname }}
       </h4>
+      <div style="height: 2rem;">
+        <a href="">
+          <i style="vertical-align:middle; color: #f88;" class="material-icons">
+            favorite
+          </i>
+        </a>
+        <span style="vertical-align:middle;">
+          {{ target_article.like }}
+        </span>
+      </div>
       <hr>
 
       <img style="width: 100%; border-radius: 3rem; margin: 1rem 2rem; "
