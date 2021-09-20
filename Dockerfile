@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "test454435"
+RUN echo "test45443566"
 
 RUN git clone https://github.com/Hyun-Jun-Lee/Django_PJ
 
