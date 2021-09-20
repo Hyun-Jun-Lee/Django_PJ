@@ -7,6 +7,14 @@
     <!-- include로 자주 쓰는 header <div> 부분 따로 관리 -->
     {% include 'header.html' %}
     <hr>
+
+    {% for message in messages %}
+    <div class="text-center">
+        <div class="btn btn-{{ message.tags }} rounded-pill px-5 my-3">
+            {{ message }}
+        </div>
+    </div>
+    {% endfor %}
     <!-- 내용 부분만 extend로 수정해서 쓰고 나머지는 모두 include로 재사용 -->
     {% block content %}
 

@@ -10,7 +10,7 @@
         {{ target_article.writer.profile.nickname }}
       </h4>
       <div style="height: 2rem;">
-        <a href="">
+        <a href="{% url 'likeapp:article_like' pk=target_article.pk %}">
           <i style="vertical-align:middle; color: #f88;" class="material-icons">
             favorite
           </i>
