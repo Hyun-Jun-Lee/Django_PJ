@@ -29,5 +29,6 @@ urlpatterns = [
     path('comments/', include('commentapp.urls')),
     path('projects/', include('projectapp.urls')),
     path('subscribe/', include('subscribapp.urls')),
+    path('likes/', include('likeapp.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # setting에서 적어줫던 이미지 경로 라우팅해주기
