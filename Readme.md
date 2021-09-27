@@ -104,6 +104,7 @@
 
 - [x] 메뉴 이름 변경 및 디자인 변경
 - [x] 좋아요 기능 추가(+django message)
-- [ ] Docker CLI 환경으로 aws 배포
+- [ ] Docker CLI 
+- [ ] AWS EC2 활용 배포
 
 
