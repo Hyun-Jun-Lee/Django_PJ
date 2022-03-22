@@ -77,10 +77,8 @@ venv/
 
 .env
 
-
 *.json
 
-db.sqlite3
 
 .idea/
 
