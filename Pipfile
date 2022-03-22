@@ -13,6 +13,7 @@ pillow = "==8.3.2"
 dj-database-url = "*"
 psycopg2 = "*"
 whitenoise = "*"
+python-decouple = "*"
 
 [dev-packages]
 
