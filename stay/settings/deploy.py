@@ -1,6 +1,6 @@
 
 from .base import *
-
+import dj_database_url
 
 def read_secret(secret_name):
     file = open('/run/secrets/'+ secret_name)
@@ -38,11 +38,12 @@ ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': read_secret('MYSQL_PASSWORD'),
-        'HOST': 'mariadb',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Heroku: Update database configuration from $DATABASE_URL.
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
